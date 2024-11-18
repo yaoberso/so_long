@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:51:12 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/18 14:25:54 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/18 15:46:02 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,10 @@ void	*create_window(void *mlx, char **map)
 }
 int	handle_keypress(int keycode, t_player *player)
 {
+	static int	count = 0;
+	
+	count++;
+	printf("compteur de deplacement: %d\n", count);
 	move_player(keycode, player, player->map);
 	mlx_clear_window(player->mlx, player->window);
 	place_tiles(player->mlx, player->window, player->tiles, player->map);
