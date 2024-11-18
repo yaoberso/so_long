@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:52:26 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/18 13:40:59 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:41:34 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 #define TILE_SIZE 64
 
-t_player *init_player(void *mlx, int start_x, int start_y, void *window, char **map)
+t_player	*init_player(void *mlx, int start_x, int start_y, void *window, char **map)
 {
-	int	width;
-	int height;
-	t_player *player = malloc(sizeof(t_player));
+	int			width;
+	int			height;
+	t_player	*player = malloc(sizeof(t_player));
 	if (!player)
 	{
 		return (NULL);
@@ -26,8 +26,8 @@ t_player *init_player(void *mlx, int start_x, int start_y, void *window, char **
 	player->x = start_x;
 	player->y = start_y;
 	player->mlx = mlx;
-    player->window = window;
-    player->map = map;
+	player->window = window;
+	player->map = map;
 	player->image = mlx_png_file_to_image(mlx, "./tiles/player.png", &width, &height);
 	if (!player->image)
 	{
@@ -61,7 +61,7 @@ void	move_player(int keycode, t_player *player,char **map)
 	}
 	else if (keycode == 53) // esc
 	{
-    	free(player);
+		free(player);
 		mlx_destroy_window(player->mlx, player->window);
 		exit(0);
 	}
@@ -70,14 +70,14 @@ void	move_player(int keycode, t_player *player,char **map)
 		i++;
 	}
 	if (new_x >= 0 && new_x < jsp && new_y >= 0 && new_y < i)
-    {
+	{
 		if (map[new_y][new_x] == 'A')
 			map[new_y][new_x] = '0';
-        if (map[new_y][new_x] != 'M' && map[new_y][new_x] != 'C')
-        {
-            player->x = new_x;
-            player->y = new_y;
-        }
+		if (map[new_y][new_x] != 'M' && map[new_y][new_x] != 'C')
+		{
+			player->x = new_x;
+			player->y = new_y;
+		}
 		if (map[new_y][new_x] == 'E')
 		{
 			if (cherche_collect(map) == 0)
@@ -87,10 +87,10 @@ void	move_player(int keycode, t_player *player,char **map)
 				exit(0);
 			}
 		}
-    }
+	}
 }
 
-void draw_player(void *mlx, void *window, t_player *player)
+void	draw_player(void *mlx, void *window, t_player *player)
 {
 	mlx_put_image_to_window(mlx, window, player->image, player->x * TILE_SIZE,player->y * TILE_SIZE);
 }
