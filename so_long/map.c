@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:51:54 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/14 14:51:57 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/18 14:03:42 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ void free_tiles(void *mlx, t_tiles *tiles)
     mlx_destroy_image(mlx, tiles->dG);
     mlx_destroy_image(mlx, tiles->plein);
     mlx_destroy_image(mlx, tiles->water);
-
-
     free(tiles);
 }
 
@@ -76,7 +74,7 @@ char **load_map(const char *filename)
     i = 0;
     while ((line = get_next_line(fd)) != NULL)
     {
-        map[i] = strdup(line);
+        map[i] = ft_strdup(line);
         free(line);
         if (!map[i])
         {
@@ -146,7 +144,7 @@ void place_tiles(void *mlx, void *window, t_tiles *tiles, char **map)
                 tile = tiles->dD;
             else if (map[y][x] == 'B')
                 tile = tiles->dB;
-            else if (map[y][x] == '0')
+            else if (map[y][x] == '0' || map[y][x] == 'P' || map[y][x] == 'A')
                 tile = tiles->plein;
             else if (map[y][x] == 'M')
                 tile = tiles->water;
@@ -156,8 +154,7 @@ void place_tiles(void *mlx, void *window, t_tiles *tiles, char **map)
                 tile = tiles->exit;
             if (tile != NULL)
             {
-                if (x >= 0 && x < WINDOW_WIDTH / TILE_SIZE && y >= 0 && y < WINDOW_HEIGHT / TILE_SIZE)
-                    mlx_put_image_to_window(mlx, window, tile, x * TILE_SIZE, y * TILE_SIZE);
+                mlx_put_image_to_window(mlx, window, tile, x * TILE_SIZE, y * TILE_SIZE);
             }
             x++;
         }

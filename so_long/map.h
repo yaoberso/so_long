@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:52:06 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/14 14:52:08 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:02:13 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <string.h>
 #include "minilibx/mlx.h"
 #include "get_next_line.h"
+#include "utils.h"
 
 #define TILE_SIZE 64
 #define MAX_LINES 100

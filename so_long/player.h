@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:14:29 by yann              #+#    #+#             */
-/*   Updated: 2024/11/14 11:29:55 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:39:42 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "get_next_line.h"
 #include "map.h"
 #include <stdlib.h>
+#include "utils.h"
 
 typedef struct s_player {
     int x;

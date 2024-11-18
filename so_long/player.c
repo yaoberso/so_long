@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:52:26 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/14 14:52:27 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/18 13:40:59 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void	move_player(int keycode, t_player *player,char **map)
 	}
 	if (new_x >= 0 && new_x < jsp && new_y >= 0 && new_y < i)
     {
+		if (map[new_y][new_x] == 'A')
+			map[new_y][new_x] = '0';
         if (map[new_y][new_x] != 'M' && map[new_y][new_x] != 'C')
         {
             player->x = new_x;
@@ -78,9 +80,12 @@ void	move_player(int keycode, t_player *player,char **map)
         }
 		if (map[new_y][new_x] == 'E')
 		{
-			free(player);
-			mlx_destroy_window(player->mlx, player->window);
-			exit(0);
+			if (cherche_collect(map) == 0)
+			{
+				free(player);
+				mlx_destroy_window(player->mlx, player->window);
+				exit(0);
+			}
 		}
     }
 }
