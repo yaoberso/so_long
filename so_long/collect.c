@@ -6,7 +6,7 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 14:51:36 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/18 14:22:37 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/19 11:39:21 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ void	draw_collect(void *mlx, void *window, char **map)
 	int		height;
 	void	*collect_image;
 
-	collect_image = mlx_png_file_to_image(mlx, "./tiles/collect.png", &width, &height);
+	collect_image = mlx_png_file_to_image(mlx, "./tiles/collect.png", &width,
+			&height);
 	y = 0;
 	while (map[y] != NULL)
 	{
@@ -29,7 +30,8 @@ void	draw_collect(void *mlx, void *window, char **map)
 		{
 			if (map[y][x] == 'A')
 			{
-				mlx_put_image_to_window(mlx, window, collect_image, x * TILE_SIZE, y * TILE_SIZE);
+				mlx_put_image_to_window(mlx, window, collect_image, x
+					* TILE_SIZE, y * TILE_SIZE);
 			}
 			x++;
 		}

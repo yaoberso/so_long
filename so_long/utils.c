@@ -6,13 +6,13 @@
 /*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:18:39 by yaoberso          #+#    #+#             */
-/*   Updated: 2024/11/18 13:39:10 by yaoberso         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:08:11 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int ft_strcol(char *s)
+int	ft_strcol(char *s)
 {
 	int	i;
 
@@ -21,10 +21,11 @@ int ft_strcol(char *s)
 		i++;
 	return (i);
 }
-char *ft_strdup(char *str)
+
+char	*ft_strdup(char *str)
 {
-	char *dup;
-	int i;
+	char	*dup;
+	int		i;
 
 	i = 0;
 	dup = malloc(sizeof(char) * (ft_strcol(str) + 1));
@@ -39,10 +40,10 @@ char *ft_strdup(char *str)
 	return (dup);
 }
 
-int cherche_px(char **map)
+int	cherche_px(char **map)
 {
-	int y;
-	int x;
+	int	y;
+	int	x;
 
 	y = 0;
 	while (map[y] != NULL)
@@ -59,10 +60,10 @@ int cherche_px(char **map)
 	return (0);
 }
 
-int cherche_py(char **map)
+int	cherche_py(char **map)
 {
-	int y;
-	int x;
+	int	y;
+	int	x;
 
 	y = 0;
 	while (map[y] != NULL)
@@ -79,11 +80,11 @@ int cherche_py(char **map)
 	return (0);
 }
 
-int cherche_collect(char **map)
+int	cherche_collect(char **map)
 {
-	int y;
-	int x;
-	int collect;
+	int	y;
+	int	x;
+	int	collect;
 
 	y = 0;
 	collect = 0;

@@ -6,7 +6,7 @@
 /*   By: yann <yann@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:14:29 by yann              #+#    #+#             */
-/*   Updated: 2024/11/12 09:57:37 by yann             ###   ########.fr       */
+/*   Updated: 2024/11/03 14:48:56 by yann             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int		ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(char *s1, const char *s2);
 void	*ft_calloc(unsigned int count, unsigned int size);
-char	**load_map(const char *filename);
 
 #endif

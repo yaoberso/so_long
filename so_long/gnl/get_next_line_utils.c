@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yann <yann@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:14:03 by yann              #+#    #+#             */
-/*   Updated: 2024/11/04 10:26:32 by yann             ###   ########.fr       */
+/*   Updated: 2024/11/04 11:01:30 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,14 +51,11 @@ char	*ft_strjoin(char *s1, const char *s2)
 		free(s1);
 		return (NULL);
 	}
-	i = 0;
-	while (s1[i] != '\0')
-	{
+	i = -1;
+	while (s1[++i] != '\0')
 		str[i] = s1[i];
-		i++;
-	}
 	j = 0;
-	while (s2[j] != '\0')
+	while (s2[j])
 		str[i++] = s2[j++];
 	str[i] = '\0';
 	free(s1);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yann <yann@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: yaoberso <yaoberso@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 11:14:23 by yann              #+#    #+#             */
-/*   Updated: 2024/11/06 09:27:33 by yann             ###   ########.fr       */
+/*   Updated: 2024/11/06 09:47:51 by yaoberso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,31 +110,19 @@ char	*get_next_line(int fd)
 }
 
 /*#include <stdio.h>
-#include <unistd.h>
 #include <fcntl.h>
-
-char *get_next_line(int fd);
-
 int main()
 {
-    int fd;
-    char *line;
+    int		fd;
+	char	*line;
 
     fd = open("test.txt", O_RDONLY);
-    if (fd == -1) {
-        perror("Error opening file");
-        return 1;
-    }
-
-    while (1)
-    {
-        line = get_next_line(fd);
-        if (line == NULL)
-            break;
-        printf("%s", line);
-        free(line);
-    }
-
-    close(fd);
-    return 0;
+	while (line != NULL)
+	{
+		line = get_next_line(fd);
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
+	return (0);
 }*/
